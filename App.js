@@ -8,7 +8,9 @@
 
 import React, { Component } from 'react';
 import First from './First';
+import Second from './Second';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,19 +19,41 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+
+
+
+
 // type Props = {};
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <First name="React-native" />
-      </View>
+      // <View style={styles.container}>
+      //   <Text style={styles.welcome}>Welcome to React Native!</Text>
+      //   <Text style={styles.instructions}>To get started, edit App.js</Text>
+      //   <Text style={styles.instructions}>{instructions}</Text>
+      // </View>
+      <AppStackNavigator />
     );
   }
 }
+
+const AppStackNavigator = createStackNavigator({
+  screen1: {
+    screen: First
+  },
+  screen2: {
+    screen: Second
+  }
+}, {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#ffffff'
+      }
+    }
+  }
+)
+
+// export default createAppContainer()
 
 const styles = StyleSheet.create({
   container: {
@@ -37,15 +61,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#000000',
-    color: '#7fffd4',
+    color: '#ffffff',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
     margin: 10,
     color: '#7fffd4',
   },
   instructions: {
+    fontSize: 25,
     textAlign: 'center',
     color: '#7fffd4',
     marginBottom: 5,
