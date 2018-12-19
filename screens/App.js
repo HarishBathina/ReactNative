@@ -9,8 +9,9 @@
 import React, { Component } from 'react';
 import First from './First';
 import Second from './Second';
+import Third from './Third';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createTabNavigator } from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -43,7 +44,10 @@ const AppStackNavigator = createStackNavigator({
   },
   screen2: {
     screen: Second
-  }
+  },
+  screen3: {
+    screen: Third
+  },
 }, {
     navigationOptions: {
       headerStyle: {
@@ -53,7 +57,7 @@ const AppStackNavigator = createStackNavigator({
   }
 )
 
-// export default createAppContainer()
+// export default createAppContainer(AppStackNavigator);
 
 const styles = StyleSheet.create({
   container: {
