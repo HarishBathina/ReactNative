@@ -10,6 +10,8 @@ import React, { Component } from 'react';
 import First from './First';
 import Second from './Second';
 import Third from './Third';
+import { Provider } from 'react-redux';
+import store from '../index';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator, createAppContainer, createTabNavigator } from 'react-navigation';
 
@@ -28,12 +30,14 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      // <View style={styles.container}>
-      //   <Text style={styles.welcome}>Welcome to React Native!</Text>
-      //   <Text style={styles.instructions}>To get started, edit App.js</Text>
-      //   <Text style={styles.instructions}>{instructions}</Text>
-      // </View>
-      <AppStackNavigator />
+      <Provider store={store}>
+        {/* <View style={styles.container}>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>To get started, edit App.js</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+        </View> */}
+        <AppStackNavigator />
+      </Provider>
     );
   }
 }

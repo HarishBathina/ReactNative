@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TextInput, Button } from 'react-native';
 import First from './First';
+import Football from './Football';
 import Second from './Second';
 import { createBottomTabNavigator } from 'react-navigation';
 
@@ -21,7 +22,7 @@ export class Third extends Component {
 }
 
 export default createBottomTabNavigator({
-    screen1: First,
+    screen1: Football,
     screen2: Second,
     screen3: Third,
 }, {
@@ -29,6 +30,8 @@ export default createBottomTabNavigator({
             labelStyle: {
                 fontSize: 25,
                 fontWeight: "bold",
+                fontFamily: "sans-serif",
+                fontStyle: "italic",
             }
         }
     },

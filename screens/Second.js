@@ -28,7 +28,10 @@ export default class Second extends Component {
                     <Text style={styles.item}>
                         Arsenal's Emile Swith Rowe celebrates scoring the winner against Liverpool U23's.
                     </Text>
-                    <Button title="Go to Screen3" onPress={() => this.props.navigation.navigate('screen3')} />
+                    <View style={styles.button}>
+                        <Button title="Go to Screen3" onPress={() => this.props.navigation.navigate('screen3')} />
+                        <Button title="Go Back" onPress={() => this.props.navigation.goBack()} />
+                    </View>
                 </View>
             );
         }
@@ -41,8 +44,7 @@ export default class Second extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // alignItems: 'center',
         backgroundColor: '#7fffd4',
         padding: 10,
     },
@@ -59,5 +61,9 @@ const styles = StyleSheet.create({
         width: undefined,
         height: undefined,
         resizeMode: 'contain',
+    },
+    button: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
     }
 })
