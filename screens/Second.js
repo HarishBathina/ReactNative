@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, ImageBackground, Image, Text, Button, WebView, TextInput, FlatList, View } from 'react-native';
+import { connect } from 'react-redux';
 
 export default class Second extends Component {
     constructor(props) {
@@ -40,6 +41,8 @@ export default class Second extends Component {
         }
     }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {

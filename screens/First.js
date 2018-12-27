@@ -14,17 +14,11 @@ export default class First extends Component {
         //     ))
         // }, 1000);
     }
-
     textChange(txt) {
         this.setState({
             text: text
         });
     }
-
-
-
-
-
     render() {
         let value = [];
         if (this.state.isShowing) {
@@ -34,28 +28,6 @@ export default class First extends Component {
                     <TextInput placeholder="Type here" onChangeText={(text) => this.setState({ text })} style={styles.item}></TextInput>
                     <Text style={styles.item}>{this.state.text}</Text>
                     <Button title="Go to Screen2" onPress={() => this.props.navigation.navigate('screen2', { name: 'react-native' })} />
-                    {/* <Button title="Alert Data" style={styles.button} onPress={() => fetch('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.clubs.json')
-                        .then((response) =>
-                            response.json())
-                        .then((responseJson) => {
-                            alert(JSON.stringify(responseJson.clubs[1]))
-                        })
-                        .catch((error) => {
-                            alert(error)
-                        })} /> */}
-                    {/* <FlatList
-                        data={[
-                            { key: 'Devin' },
-                            { key: 'Jackson' },
-                            { key: 'James' },
-                            { key: 'Joel' },
-                            { key: 'John' },
-                            { key: 'Jillian' },
-                            { key: 'Jimmy' },
-                            { key: 'Julie' },
-                        ]}
-                        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
-                    /> */}
                 </View>
             );
         }

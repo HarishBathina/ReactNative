@@ -10,12 +10,12 @@ class Football extends Component {
 
     render() {
         let preText = "Best club in the World is";
-        if (this.props.plClubs) {
+        if (this.props.plClubs !== []) {
             return (
                 <View style={styles.container}>
                     <Button title="Alert Best Club" onPress={this.props.getClubs.bind(this)} />
                     <Text style={styles.item}>
-                        {this.state.text}
+                        {this.state.text + ' ' + this.props.bestClub}
                     </Text>
                     <FlatList
                         data={this.props.plClubs}
@@ -38,7 +38,8 @@ class Football extends Component {
 
 const mapStoreToProps = (store) => {
     return {
-        plClubs: store.plClubs
+        plClubs: store.plClubs,
+        bestClub: store.bestClub,
     }
 }
 
